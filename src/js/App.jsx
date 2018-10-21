@@ -2,18 +2,15 @@ import React from 'react';
 import {hot} from 'react-hot-loader'
 import styled, {createGlobalStyle} from 'styled-components';
 
-import Navigation from "./navigation/Navigation";
-import LeftSideBar from "./sideBar/leftSideBar/LeftSideBar";
-import HomePage from "./pages/home/HomePage";
-import Deeper from "./pages/deeper/Deeper";
+import Navigation from "./components/navigation/Navigation";
+import Space from "./components/main/Space";
 
 
 function App() {
     return (
         <>
             <Navigation/>
-            <LeftSideBar/>
-            <HomePage/>
+            <Space/>
             <GlobalStyles/>
         </>
     );

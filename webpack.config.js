@@ -48,7 +48,7 @@ module.exports = {
         }),
         new CopyWebpackPlugin([
             // relative path is from src
-            {from: './src/static/favicon.ico'}, // <- your path to favicon
+            // {from: './src/static/favicon.ico'}, // <- your path to favicon
         ])
     ]
 };
