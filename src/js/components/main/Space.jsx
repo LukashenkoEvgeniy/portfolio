@@ -13,6 +13,7 @@ export default class Space extends React.Component {
 
     constructor(props) {
         super(props);
+
         this.state = {groundOffset: 0};
         this.scrollListener = this.scrollListener.bind(this)
     }
