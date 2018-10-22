@@ -8,19 +8,20 @@ export default class Planet extends React.Component {
         this.state = ({showDescription: false})
     }
 
-    showDescription(){
+    showDescription() {
         this.setState({showDescription: true})
     }
 
     render() {
         return (
-            <PlanetWrapper onClick={()=>this.showDescription()}>
+            <PlanetWrapper onClick={() => this.showDescription()}>
                 <PlanetImage
                     src={this.props.planet.img}
                 />
-                <PlanetDescription visibility={this.state.showDescription}>
+                {this.state.showDescription && <PlanetDescription>
                     {this.props.planet.description}
                 </PlanetDescription>
+                }
             </PlanetWrapper>
         );
     }
@@ -35,7 +36,6 @@ const PlanetWrapper = styled.div`
 `;
 
 const PlanetDescription = styled.div`
-  display: ${props => props.visibility ? 'block' : 'none'};
   color: red;
   font-size: 25px;
 `;
