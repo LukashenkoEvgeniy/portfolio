@@ -7,11 +7,11 @@ export default function Navigation() {
     return (
         <Nav>
             <Links>
-                <NavItem active>MEN'S</NavItem>
-                <NavItem>WOMEN'S</NavItem>
-                <NavItem>KID'S</NavItem>
-                <NavItem>SHOES</NavItem>
-                <NavItem>EQUIPMENT</NavItem>
+                <NavItem active>{`MEN'S`}</NavItem>
+                <NavItem>{`WOMEN'S`}</NavItem>
+                <NavItem>{`KID'S`}</NavItem>
+                <NavItem>{'SHOES'}</NavItem>
+                <NavItem>{'EQUIPMENT'}</NavItem>
             </Links>
 
             {/*<Search>*/}

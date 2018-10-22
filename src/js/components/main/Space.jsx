@@ -7,7 +7,9 @@ import venus from '../../../static/venus.png'
 import earth from '../../../static/earth.png'
 import mars from '../../../static/mars.png'
 import jupiter from '../../../static/jupiter.png'
+import saturn from '../../../static/saturn.png'
 import Planet from "./Planet";
+import Stars from "./Stars";
 
 export default class Space extends React.Component {
 
@@ -35,21 +37,31 @@ export default class Space extends React.Component {
     render() {
         return (
             <SpaceBackgrond>
+                <Stars/>
                 <Planet
+                    name={'MERCURY'}
                     onClick={() => {this.scrollToNextPlanet(1);}}
                     planetImg={mercury}/>
                 <Planet
+                    name={'VENUS'}
                     onClick={() => {this.scrollToNextPlanet(2);}}
                     planetImg={venus}/>
                 <Planet
+                    name={'EARTH'}
                     onClick={() => {this.scrollToNextPlanet(3);}}
                     planetImg={earth}/>
                 <Planet
+                    name={'MARS'}
                     onClick={() => {this.scrollToNextPlanet(4);}}
                     planetImg={mars}/>
                 <Planet
-                    onClick={() => {this.scrollToNextPlanet(4);}}
+                    name={'JUPITER'}
+                    onClick={() => {this.scrollToNextPlanet(5);}}
                     planetImg={jupiter}/>
+                <Planet
+                    name={'SATURN'}
+                    onClick={() => {this.scrollToNextPlanet(6);}}
+                    planetImg={saturn}/>
             </SpaceBackgrond>
         );
     }

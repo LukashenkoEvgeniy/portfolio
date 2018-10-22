@@ -13,6 +13,7 @@ export default class Planet extends React.Component {
     render() {
         return (
             <PlanetWrapper onClick={this.props.onClick}>
+                <Name>{this.props.name}</Name>
                 <PlanetImage
                     ref={(ref) => this.ground = ref}
                     src={this.props.planetImg}
@@ -21,6 +22,13 @@ export default class Planet extends React.Component {
         );
     }
 }
+
+const Name = styled.p`
+  font-size: 5rem;
+  color: aliceblue;
+  position: absolute;
+  margin: 0;
+`;
 
 const PlanetWrapper = styled.div`
   width: 70%;
