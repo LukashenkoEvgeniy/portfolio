@@ -9,7 +9,7 @@ import Space from "./components/main/Space";
 function App() {
     return (
         <>
-            <Navigation/>
+            {/*<Navigation/>*/}
             <Space/>
             <GlobalStyles/>
         </>

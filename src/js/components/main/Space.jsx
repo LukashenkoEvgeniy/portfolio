@@ -8,21 +8,13 @@ import earth from '../../../static/earth.png'
 import mars from '../../../static/mars.png'
 import jupiter from '../../../static/jupiter.png'
 import Planet from "./Planet";
+import Satellite from "./Satellite";
+import Stars from "./Stars";
 
 export default class Space extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {groundOffset: 0};
-        this.scrollListener = this.scrollListener.bind(this)
-    }
-
-    componentDidMount() {
-        document.addEventListener("scroll", this.scrollListener)
-    }
-
-    scrollListener() {
-        // this.setState({groundOffset: window.pageYOffset});
     }
 
     scrollToNextPlanet(index) {
@@ -33,23 +25,27 @@ export default class Space extends React.Component {
     }
 
     render() {
+
+        let planets = [
+            {
+                name: 'MERCURY',
+                img: mercury,
+                description: 'Fists planet'
+            },
+        ];
         return (
             <SpaceBackgrond>
+                <Satellite/>
                 <Planet
-                    onClick={() => {this.scrollToNextPlanet(1);}}
-                    planetImg={mercury}/>
+                    planet={planets[0]}/>
                 <Planet
-                    onClick={() => {this.scrollToNextPlanet(2);}}
-                    planetImg={venus}/>
+                    planet={planets[0]}/>
                 <Planet
-                    onClick={() => {this.scrollToNextPlanet(3);}}
-                    planetImg={earth}/>
+                    planet={planets[0]}/>
                 <Planet
-                    onClick={() => {this.scrollToNextPlanet(4);}}
-                    planetImg={mars}/>
+                    planet={planets[0]}/>
                 <Planet
-                    onClick={() => {this.scrollToNextPlanet(4);}}
-                    planetImg={jupiter}/>
+                    planet={planets[0]}/>
             </SpaceBackgrond>
         );
     }
