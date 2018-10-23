@@ -9,18 +9,19 @@ export default class Planet extends React.Component {
     }
 
     showDescription() {
-        this.setState({showDescription: true})
+        this.setState({showDescription: !this.state.showDescription})
     }
 
     render() {
+        const {planet} = this.props;
         return (
             <PlanetWrapper onClick={() => this.showDescription()}>
-                <Name>{this.props.name}</Name>
+                <Name>{planet.name}</Name>
                 <PlanetImage
-                    src={this.props.planet.img}
+                    src={planet.img}
                 />
                 {this.state.showDescription && <PlanetDescription>
-                    {this.props.planet.description}
+                    {planet.description}
                 </PlanetDescription>
                 }
             </PlanetWrapper>
@@ -33,6 +34,7 @@ const Name = styled.p`
   color: aliceblue;
   position: absolute;
   margin: 0;
+  z-index: 11;
 `;
 
 const PlanetWrapper = styled.div`
