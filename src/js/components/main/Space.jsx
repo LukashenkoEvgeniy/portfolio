@@ -8,6 +8,10 @@ import earth from '../../../static/earth.png'
 import mars from '../../../static/mars.png'
 import jupiter from '../../../static/jupiter.png'
 import saturn from '../../../static/saturn.png'
+import neptune from '../../../static/neptune.png'
+import pluton from '../../../static/pluton.png'
+import uranus from '../../../static/uranus.png'
+import sun from '../../../static/sun.png'
 import Planet from "./Planet";
 import Satellite from "./Satellite";
 import Stars from "./Stars";
@@ -16,6 +20,16 @@ export default class Space extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = {groundOffset: 0};
+        this.scrollListener = this.scrollListener.bind(this)
+    }
+
+    componentDidMount() {
+        document.addEventListener("scroll", this.scrollListener)
+    }
+
+    scrollListener() {
+        // this.setState({groundOffset: window.pageYOffset});
     }
 
     scrollToNextPlanet(index) {
@@ -29,8 +43,48 @@ export default class Space extends React.Component {
 
         let planets = [
             {
+                name: 'SUN',
+                img: sun,
+                description: 'Fists planet'
+            },{
                 name: 'MERCURY',
                 img: mercury,
+                description: 'Fists planet'
+            },{
+                name: 'VENUS',
+                img: venus,
+                description: 'Fists planet'
+            },{
+                name: 'EARTH',
+                img: earth,
+                description: 'Fists planet'
+            },{
+                name: 'MARS',
+                img: mars,
+                description: 'Fists planet'
+            },{
+                name: 'EARTH',
+                img: earth,
+                description: 'Fists planet'
+            },{
+                name: 'JUPITER',
+                img: jupiter,
+                description: 'Fists planet'
+            },{
+                name: 'SATURN',
+                img: saturn,
+                description: 'Fists planet'
+            },{
+                name: 'URANUS',
+                img: uranus,
+                description: 'Fists planet'
+            },{
+                name: 'NEPTUNE',
+                img: neptune,
+                description: 'Fists planet'
+            },{
+                name: 'PLUTON',
+                img: pluton,
                 description: 'Fists planet'
             },
         ];
