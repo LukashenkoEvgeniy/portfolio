@@ -9,13 +9,31 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
   },
+
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
+  },
+
   "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "modulePaths": [
+      "/src/"
+    ],
+    "collectCoverageFrom": [
+      "src/**",
+      "!**/node_modules/**"
+    ],
     "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|svg)$": "./src/test/fileMock.js",
+      "\\.(jpg|jpeg|png|svg)$": "./test/fileMock.js",
       "\\.(css|scss)$": "identity-obj-proxy"
     },
     "setupFiles": [
-      "./src/test/jestsetup.js"
+      "./test/jestsetup.js"
     ],
     "snapshotSerializers": [
       "<rootDir>/node_modules/enzyme-to-json/serializer"
@@ -48,6 +66,7 @@
     "enzyme-to-json": "^3.3.5",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^1.3.0",
     "jest": "^23.6.0",
     "prop-types": "^15.6.2",
     "react-hot-loader": "^4.3.12",
@@ -62,6 +81,7 @@
     "webpack-dev-server": "^3.1.10"
   },
   "dependencies": {
+    "jest-styled-components": "^6.3.1",
     "react": "^16.7.0-alpha.2",
     "react-dom": "^16.7.0-alpha.2"
   }

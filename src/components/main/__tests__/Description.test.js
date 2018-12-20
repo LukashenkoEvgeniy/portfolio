@@ -1,4 +1,4 @@
-import Description from "./Description";
+import Description from "../Description";
 import React from "react";
 
 describe('Description test', () => {
@@ -10,7 +10,7 @@ describe('Description test', () => {
         description: 'Сонце — типова зоря головної послідовності спектрального класу G2. Воно майже ідеально сферичне і являє собою гарячу плазму, сплетену магнітними полями. Сонячне випромінювання підтримує життя на Землі (фотони необхідні для початкових стадій процесу фотосинтезу) та визначає клімат нашої планети. Сонце — потужне джерело енергії, яку воно постійно випромінює в усіх ділянках спектра електромагнітних хвиль — від рентгенівських і ультрафіолетових променів до радіохвиль. Це випромінювання сильно впливає на всі тіла Сонячної системи: нагріває їх, позначається на атмосферах планет, дає світло й тепло.'
     };
 
-    it('should render a label', () => {
+    it('should toMatchSnapshot', () => {
         const wrapper = shallow(
             <Description planet={planet}/>
         );
@@ -22,5 +22,13 @@ describe('Description test', () => {
             <Description planet={planet}/>
         );
         expect(wrapper.prop('planet').id).toEqual(0);
+    });
+
+    it('should show header text', () => {
+        const wrapper = shallow(
+            <Description planet={planet}/>
+        );
+        // console.log(wrapper.debug())
+        expect(wrapper.find('Description__Header').text()).toBe('SUN');
     });
 });

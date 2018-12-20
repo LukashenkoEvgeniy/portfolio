@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Planet test should toMatchSnapshot 1`] = `
+<Planet__PlanetWrapper>
+  <Planet__Name>
+    SUN
+  </Planet__Name>
+  <Planet__PlanetImage
+    src={null}
+  />
+</Planet__PlanetWrapper>
+`;
